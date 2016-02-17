@@ -1,0 +1,1 @@
+create table T_PROP(prop_key varchar(100), prop_value varchar(100));
