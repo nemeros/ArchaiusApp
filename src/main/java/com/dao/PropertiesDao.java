@@ -55,4 +55,15 @@ public class PropertiesDao extends AbstractDao {
 		
 		this.getJdbcTemplate().update(query.toString(), new Object[]{value, key});
 	}
+	
+	/**
+	 * 
+	 * @param pojo
+	 */
+	public void insertKeyValue(KeyValuePojo pojo){
+		StringBuilder query = new StringBuilder(100);
+		query.append("INSERT INTO T_PROP (prop_key, prop_value) VALUES (?, ?)");
+		
+		this.getJdbcTemplate().update(query.toString(), new Object[]{pojo.getKey(), pojo.getValue()});
+	}
 }

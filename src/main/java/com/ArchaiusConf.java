@@ -21,7 +21,7 @@ public class ArchaiusConf {
 	DataSource ds;
 	
 	@Bean
-	public boolean initArchauis(){
+	public AbstractConfiguration initArchauis(){
 		AbstractConfiguration myConfiguration = new ConcurrentMapConfiguration();
 		
 		AbstractPollingScheduler scheduler = new FixedDelayPollingScheduler(5000, 2000, false);
@@ -32,6 +32,6 @@ public class ArchaiusConf {
 		
 		ConfigurationManager.install(myConfiguration);
 		
-		return true;
+		return myConfiguration;
 	}
 }
